@@ -1,8 +1,6 @@
 package by.goncharov.editor.drawing.controler;
 
-import java.awt.Color;
 import by.goncharov.editor.drawing.model.Circle;
-import by.goncharov.editor.drawing.model.Segment;
 import by.goncharov.editor.drawing.view.CoordinatePlane;
 import by.goncharov.editor.view.WorkingAreaPanel;
 

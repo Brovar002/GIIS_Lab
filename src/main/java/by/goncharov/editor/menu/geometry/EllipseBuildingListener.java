@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import by.goncharov.editor.drawing.controler.AlgorithmController;
-import by.goncharov.editor.view.twoorderline.BuildCirclePanel;
 import by.goncharov.editor.view.twoorderline.BuildEllipsePanel;
 
 public class EllipseBuildingListener implements ActionListener {

@@ -9,7 +9,7 @@ public abstract class AlgorithmController implements Runnable {
 	protected GeometryObject mGeometryObject;
 	protected boolean mCheckoutMod;
 
-	public AlgorithmController(WorkingAreaPanel pWorkingAreaPanel){
+	protected AlgorithmController(WorkingAreaPanel pWorkingAreaPanel){
 		mWorkingAreaPanel = pWorkingAreaPanel;
 	}
 

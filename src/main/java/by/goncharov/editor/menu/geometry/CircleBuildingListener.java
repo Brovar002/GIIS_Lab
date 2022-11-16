@@ -5,10 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import by.goncharov.editor.drawing.controler.AlgorithmController;
-import by.goncharov.editor.drawing.controler.CircleAlgorithmController;
-import by.goncharov.editor.view.BuildSegmentPanel;
 import by.goncharov.editor.view.twoorderline.BuildCirclePanel;
 
 public class CircleBuildingListener implements ActionListener {

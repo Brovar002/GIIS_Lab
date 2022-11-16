@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import by.goncharov.editor.drawing.controler.AlgorithmController;
 import by.goncharov.editor.drawing.model.Circle;
-import by.goncharov.editor.drawing.model.Segment;
 
 public class BuildCirclePanel extends JPanel {
 
