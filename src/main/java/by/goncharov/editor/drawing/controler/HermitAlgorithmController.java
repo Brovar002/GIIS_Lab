@@ -4,10 +4,14 @@ import Jama.Matrix;
 import by.goncharov.editor.drawing.model.BorderConditionsForHermite;
 import by.goncharov.editor.drawing.view.CoordinatePlane;
 import by.goncharov.editor.view.WorkingAreaPanel;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.awt.Color;
 
 public class HermitAlgorithmController extends AlgorithmController {
+
+    public static final Logger LOGGER = LogManager.getLogger(HermitAlgorithmController.class);
 
     public HermitAlgorithmController(WorkingAreaPanel pWorkingAreaPanel) {
         super(pWorkingAreaPanel);
@@ -39,15 +43,14 @@ public class HermitAlgorithmController extends AlgorithmController {
             Matrix result = matrixT.times(resultMatrix);
 
 
-            System.out.println(result.get(0, 0));
-            System.out.println(result.get(0, 1));
+            LOGGER.info(result.get(0, 0));
+            LOGGER.info(result.get(0, 1));
 
             int x = (int) Math.round(result.get(0, 0));
             int y = (int) Math.round(result.get(0, 1));
 
-            System.out.println("x=" + x);
-            System.out.println("y=" + y);
-            System.out.println();
+            LOGGER.info("x=" + x);
+            LOGGER.info("y=" + y);
 
             coordinatePlane.drawPlot(x, y, new Color(0,0,0));
         }

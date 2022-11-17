@@ -16,7 +16,15 @@ public class EllipseAlgorithmController extends AlgorithmController {
         coordinatePlane.clearCoordinatePlane();
         int pause = mCheckoutMod ? 1000 : 0;
 
-        double centerX, centerY, delta, x, y, limit, sigma, a, b;
+        double centerX;
+        double centerY;
+        double delta;
+        double x;
+        double y;
+        double limit;
+        double sigma;
+        double a;
+        double b;
         centerX = ellipse.getEclipseX();
         centerY = ellipse.getEclipseY();
         a = ellipse.getEclipseA();
@@ -50,6 +58,7 @@ public class EllipseAlgorithmController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
 
             tableRow = logTemplate;
@@ -100,7 +109,8 @@ public class EllipseAlgorithmController extends AlgorithmController {
     private String insertLogInfo(String template, int cell, int info) {
         String answer;
         String insertInfo = String.valueOf(info);
-        int left, right;
+        int left;
+        int right;
         left = 5 * cell;
         right = left + 3;
         while (insertInfo.length() < 4) {

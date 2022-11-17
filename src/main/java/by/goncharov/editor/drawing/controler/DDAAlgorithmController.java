@@ -38,6 +38,7 @@ public class DDAAlgorithmController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
 
 //            coordinatePlane.drawSegment(x, y, x+dx, y+dy, Color.black);

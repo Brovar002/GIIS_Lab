@@ -25,7 +25,9 @@ public class BrezenhemAlgorithmController extends AlgorithmController {
 		int dx = x2-x1;
 		int dy = y2-y1;
 		int e = 2*dy - dx;
-		int nx, ny, ne;
+		int nx;
+		int ny;
+		int ne;
 
 		logInfo("i    e    x    y   e'  plot(x, y)");
 		logInfo(0 + "   -    " + x + "   " + y + "   " + e + "  (" + x + " " + y + ")");
@@ -37,6 +39,7 @@ public class BrezenhemAlgorithmController extends AlgorithmController {
 				Thread.sleep(pause);
 			} catch (InterruptedException pE) {
 				pE.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
 			ny = y;
 			nx = x+1;

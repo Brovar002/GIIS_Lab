@@ -3,10 +3,13 @@ package by.goncharov.editor.drawing.controler;
 import by.goncharov.editor.drawing.model.Parabola;
 import by.goncharov.editor.drawing.view.CoordinatePlane;
 import by.goncharov.editor.view.WorkingAreaPanel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 
 public class ParabolaAlgorithController extends AlgorithmController {
+    public static final Logger LOGGER = LogManager.getLogger(ParabolaAlgorithController.class);
 
     public ParabolaAlgorithController(WorkingAreaPanel pWorkingAreaPanel) {
         super(pWorkingAreaPanel);
@@ -24,7 +27,9 @@ public class ParabolaAlgorithController extends AlgorithmController {
         int y = parabola.getY();
         int y1 = y;
         int bound = 20;
-        int d, p2, p4;
+        int d;
+        int p2;
+        int p4;
         p2 = 2 * p;
         p4 = p2 * 2;
         d = 1 - p;
@@ -35,10 +40,11 @@ public class ParabolaAlgorithController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
             coordinatePlane.drawPlot(x, y, Color.black);
             coordinatePlane.drawPlot(x, y1, Color.black);
-            System.out.println("i " + ++i + " d " + d + " " + x + " " + y);
+            LOGGER.info("i " + ++i + " d " + d + " " + x + " " + y);
             if (d >= 0) {
                 x++;
                 d -= p2;
@@ -57,10 +63,11 @@ public class ParabolaAlgorithController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
             coordinatePlane.drawPlot(x, y, Color.black);
             coordinatePlane.drawPlot(x, y1, Color.black);
-            System.out.println("i " + ++i + " d " + d + " " + x + " " + y);
+            LOGGER.info("i " + ++i + " d " + d + " " + x + " " + y);
             if (d <= 0) {
                 y++;
                 y1--;

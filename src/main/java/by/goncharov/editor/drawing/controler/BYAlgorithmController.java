@@ -17,7 +17,23 @@ public class BYAlgorithmController extends AlgorithmController {
         coordinatePlane.clearCoordinatePlane();
         int pause = mCheckoutMod?1000:0;
 
-        double buffer, x, x1, y1, x2, y2, dx, dy, gradient, xend, yend, xgap, xpxl1, ypxl1, xpxl2, ypxl2, intery;
+        double buffer;
+        double x;
+        double x1;
+        double y1;
+        double x2;
+        double y2;
+        double dx;
+        double dy;
+        double gradient;
+        double xend;
+        double yend;
+        double xgap;
+        double xpxl1;
+        double ypxl1;
+        double xpxl2;
+        double ypxl2;
+        double intery;
         x1 = segment.getStartX();
         y1 = segment.getStartY();
         x2 = segment.getFinishX();
@@ -52,6 +68,7 @@ public class BYAlgorithmController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
             coordinatePlane.drawPlot((int)x, (int)ipart(intery), new Color(0, 0, 0, (int)(255*(1 - fpart(intery)))));
             coordinatePlane.drawPlot((int)x, (int)ipart(intery), new Color(0, 0, 0, (int)(255*(fpart(intery)))));

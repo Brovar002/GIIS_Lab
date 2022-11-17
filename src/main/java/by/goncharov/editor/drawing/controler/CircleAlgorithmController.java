@@ -16,7 +16,14 @@ public class CircleAlgorithmController extends AlgorithmController {
 		coordinatePlane.clearCoordinatePlane();
 		int pause = mCheckoutMod?1000:0;
 
-		double centerX, centerY, r, delta, x, y, limit, sigma;
+		double centerX;
+        double centerY;
+        double r;
+        double delta;
+        double x;
+        double y;
+        double limit;
+        double sigma;
 		centerX = circle.getCircleX();
 		centerY = circle.getCircleY();
 		r = circle.getCircleR();
@@ -43,6 +50,7 @@ public class CircleAlgorithmController extends AlgorithmController {
                 Thread.sleep(pause);
             } catch (InterruptedException pE) {
                 pE.printStackTrace();
+                Thread.currentThread().interrupt();
             }
 
             tableRow = logTemplate;
@@ -92,7 +100,8 @@ public class CircleAlgorithmController extends AlgorithmController {
     private String insertLogInfo(String template, int cell, int info){
         String answer;
         String insertInfo = String.valueOf(info);
-        int left, right;
+        int left;
+        int right;
         left = 4*cell;
         right = left+2;
         while (insertInfo.length()<3) insertInfo = " " + insertInfo;
